@@ -1,45 +1,76 @@
-body {
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+header {
+    background: #0066cc;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+header h1 {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
-.App {
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
+/* CABEÇALHO DA TABELA */
+thead {
+    background: #333;
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.heart {
-    color: #ff0000;
+/* LINHAS DA TABELA */
+tbody tr:hover {
+    background: #f5f5f5;
 }
 
-.small {
-    font-size: 0.75rem;
+/* LINKS DE AÇÃO */
+td a {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* CORES DOS LINKS DE AÇÃO */
+td a:nth-child(1) { color: #0066cc; } /* Visualizar - Azul */
+td a:nth-child(2) { color: #28a745; } /* Editar - Verde */
+td a:nth-child(3) { color: #dc3545; } /* Apagar - Vermelho */
+
+/* BOTÃO NOVO FUNCIONÁRIO */
+.novo-botao {
+    text-align: right;
+}
+
+.novo-botao a {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.novo-botao a:hover {
+    background: #218838;
 }

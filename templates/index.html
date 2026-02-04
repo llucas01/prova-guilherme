@@ -1,19 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
+</head>
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
+    <div class="app">
+        <header>
+            <h1>{{ app_name }}</h1>
         </header>
+        
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+            <!-- TABELA -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Primeiro Nome</th>
+                        <th>Último Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in funcionarios %}
+                    <tr>
+                        <td>{{ f.cpf|format_cpf }}</td>
+                        <td>{{ f.pnome }}</td>
+                        <td>{{ f.unome }}</td>
+                        <td>
+                            <!-- LINKS DE AÇÃO -->
+                            <a href="{{ url_for('details', pk='cpf', id=f.cpf) }}" title="Ver detalhes">
+                                👁️
+                            </a>
+                            <a href="{{ url_for('update', pk=f.cpf) }}" title="Editar">
+                                ✏️
+                            </a>
+                            <a href="{{ url_for('delete', pk=f.cpf) }}" title="Apagar">
+                                🗑️
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            <!-- BOTÃO NOVO -->
+            <div class="novo-botao">
+                <a href="{{ url_for('create') }}">
+                    ➕ Novo Funcionário
+                </a>
+            </div>
+        </main>
     </div>
 </body>
-
 </html>

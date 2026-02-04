@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Funcionário</title>
+    <!-- Link para CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Funcionário</h1>
+        <p class="subtitulo">Modifique os dados abaixo e clique em "Salvar"</p>
+        
+        <hr>
+        
+        <!-- Formulário-->
+        <form method="POST" action="{{ url_for('update', pk=funcionario.cpf) }}">
+            
+            <!-- Campo 1: Nome -->
+            <div class="form-group">
+                <label>Nome:</label>
+                <input type="text" name="pnome" 
+                       value="{{ funcionario.pnome }}" required>
+            </div>
+            
+            <!-- Campo 2: Sobrenome -->
+            <div class="form-group">
+                <label>Sobrenome:</label>
+                <input type="text" name="unome" 
+                       value="{{ funcionario.unome }}" required>
+            </div>
+            
+            <!-- Campo 3: CPF (somente leitura) -->
+            <div class="form-group">
+                <label>CPF:</label>
+                <input type="text" 
+                       value="{{ funcionario.cpf|format_cpf }}" readonly>
+                <small class="text-muted">CPF não pode ser alterado</small>
+            </div>
+            
+            <!-- Campo 4: Salário -->
+            <div class="form-group">
+                <label>Salário (R$):</label>
+                <input type="number" step="0.01" name="salario" 
+                       value="{{ funcionario.salario }}" required>
+            </div>
+            
+            <!-- Campo 5: Data de Nascimento -->
+            <div class="form-group">
+                <label>Data de Nascimento:</label>
+                {% if funcionario.data_nasc is string %}
+                    {% set data_nasc_value = funcionario.data_nasc[:10] %}
+                {% else %}
+                    {% set data_nasc_value = funcionario.data_nasc.strftime('%Y-%m-%d') %}
+                {% endif %}
+                <input type="date" name="data_nasc" 
+                       value="{{ data_nasc_value }}" required>
+            </div>
+            
+            <!-- Campo 6: Endereço -->
+            <div class="form-group">
+                <label>Endereço:</label>
+                <input type="text" name="endereco" 
+                       value="{{ funcionario.endereco }}" required>
+            </div>
+            
+            <!-- Campo 7: Sexo (dropdown simples) -->
+            <div class="form-group">
+                <label>Sexo:</label>
+                <select name="sexo" required>
+                    <option value="M" {% if funcionario.sexo|upper == 'M' %}selected{% endif %}>
+                        Masculino
+                    </option>
+                    <option value="F" {% if funcionario.sexo|upper == 'F' %}selected{% endif %}>
+                        Feminino
+                    </option>
+                </select>
+            </div>
+            
+            <hr>
+            
+            <!-- Botões -->
+            <div class="btn-group">
+                <button type="submit">Salvar</button>
+                <a  href="{{ url_for('index') }}" class="btn-cancelar">Cancelar</a>
+            </div>
+            
+        </form>
+        
+        <!-- Informação adicional -->
+        <div class="info">
+            <h5>Como funciona?</h5>
+            <ol>
+                <li>Modifique os campos acima</li>
+                <li>Clique em "Salvar" para atualizar</li>
+                <li>Ou "Cancelar" para voltar à lista</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

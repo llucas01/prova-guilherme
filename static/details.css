@@ -1,0 +1,197 @@
+/* RESET E BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* CONTAINER PRINCIPAL */
+.app {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    background: linear-gradient(to right, #0066cc, #004d99);
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo {
+    padding: 40px;
+}
+
+.titulo-pagina {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+/* CARTAO DE DETALHES */
+.cartao {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.cabecalho-cartao {
+    background: #2c3e50;
+    color: white;
+    padding: 25px 30px;
+}
+
+.cabecalho-cartao h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+/* CORPO DO CARTAO */
+.corpo-cartao {
+    padding: 35px 30px;
+}
+
+/* LAYOUT DAS INFORMAÇÕES */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.info-coluna {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-coluna h5 {
+    color: #0066cc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ESTILO DAS INFORMAÇÕES */
+.info-item {
+    margin-bottom: 18px;
+    padding-left: 5px;
+}
+
+.info-item strong {
+    color: #2c3e50;
+    display: inline-block;
+    width: 160px;
+    font-weight: 600;
+}
+
+/* SEPARADOR */
+.separador {
+    height: 1px;
+    background: #eee;
+    margin: 30px 0;
+}
+
+/* INFORMAÇÕES ADICIONAIS */
+.info-adicional {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* BOTÕES */
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.botao {
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.botao i {
+    font-size: 1rem;
+}
+
+/* CORES DOS BOTÕES */
+.botao-voltar {
+    background: #6c757d;
+    color: white;
+}
+
+.botao-voltar:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.botao-editar {
+    background: #ffc107;
+    color: #212529;
+}
+
+.botao-editar:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+.botao-deletar {
+    background: #dc3545;
+    color: white;
+}
+
+.botao-deletar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* BADGES E ESTILOS ESPECIAIS */
+.badge {
+    background: #2c3e50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-secundario {
+    background: #6c757d;
+}
+
+.texto-secundario {
+    color: #6c757d;
+    font-style: italic;
+}
