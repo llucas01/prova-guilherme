@@ -105,7 +105,6 @@ def update(pk):
             
             print(f"Criado objeto: {funcionario_atualizado}")
             
-            # 5. Atualizar no banco
             resultado = funcionario_dao.update('cpf', pk, funcionario_atualizado)
             
             if resultado:
