@@ -3,7 +3,6 @@
     margin: 0 auto;
 }
 
-/* CABEÇALHO */
 header {
     background: #0066cc;
     color: white;
@@ -17,7 +16,6 @@ header h1 {
     text-align: center;
 }
 
-/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -26,7 +24,6 @@ table {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* CABEÇALHO DA TABELA */
 thead {
     background: #333;
     color: white;
@@ -38,12 +35,10 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-/* LINHAS DA TABELA */
 tbody tr:hover {
     background: #f5f5f5;
 }
 
-/* LINKS DE AÇÃO */
 td a {
     text-decoration: none;
     margin-right: 10px;
@@ -57,7 +52,6 @@ td a:nth-child(1) { color: #0066cc; } /* Visualizar - Azul */
 td a:nth-child(2) { color: #28a745; } /* Editar - Verde */
 td a:nth-child(3) { color: #dc3545; } /* Apagar - Vermelho */
 
-/* BOTÃO NOVO FUNCIONÁRIO */
 .novo-botao {
     text-align: right;
 }

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Editar Funcionário</title>
-    <!-- Link para CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 </head>
 <body>
@@ -12,24 +11,20 @@
         
         <hr>
         
-        <!-- Formulário-->
         <form method="POST" action="{{ url_for('update', pk=funcionario.cpf) }}">
             
-            <!-- Campo 1: Nome -->
             <div class="form-group">
                 <label>Nome:</label>
                 <input type="text" name="pnome" 
                        value="{{ funcionario.pnome }}" required>
             </div>
             
-            <!-- Campo 2: Sobrenome -->
             <div class="form-group">
                 <label>Sobrenome:</label>
                 <input type="text" name="unome" 
                        value="{{ funcionario.unome }}" required>
             </div>
             
-            <!-- Campo 3: CPF (somente leitura) -->
             <div class="form-group">
                 <label>CPF:</label>
                 <input type="text" 
@@ -37,14 +32,12 @@
                 <small class="text-muted">CPF não pode ser alterado</small>
             </div>
             
-            <!-- Campo 4: Salário -->
             <div class="form-group">
                 <label>Salário (R$):</label>
                 <input type="number" step="0.01" name="salario" 
                        value="{{ funcionario.salario }}" required>
             </div>
             
-            <!-- Campo 5: Data de Nascimento -->
             <div class="form-group">
                 <label>Data de Nascimento:</label>
                 {% if funcionario.data_nasc is string %}
@@ -56,14 +49,12 @@
                        value="{{ data_nasc_value }}" required>
             </div>
             
-            <!-- Campo 6: Endereço -->
             <div class="form-group">
                 <label>Endereço:</label>
                 <input type="text" name="endereco" 
                        value="{{ funcionario.endereco }}" required>
             </div>
             
-            <!-- Campo 7: Sexo (dropdown simples) -->
             <div class="form-group">
                 <label>Sexo:</label>
                 <select name="sexo" required>
@@ -78,7 +69,6 @@
             
             <hr>
             
-            <!-- Botões -->
             <div class="btn-group">
                 <button type="submit">Salvar</button>
                 <a  href="{{ url_for('index') }}" class="btn-cancelar">Cancelar</a>
@@ -86,7 +76,6 @@
             
         </form>
         
-        <!-- Informação adicional -->
         <div class="info">
             <h5>Como funciona?</h5>
             <ol>

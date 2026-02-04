@@ -1,9 +1,7 @@
-# Módulo de conexão com o Supabase
 import os
 from supabase import create_client, Client
 from dotenv import load_dotenv
 
-# Carrega as variáveis de ambiente
 load_dotenv()
 
 class SupabaseConnection:
@@ -12,11 +10,8 @@ class SupabaseConnection:
   * Garante apenas uma instância em toda a aplicação
   '''
   _instance = None
-  # Type Hint
-  # * Garante o tipo de dado a ser atribuído a um atributo/variável
   _client: Client = None
 
-  # new - cria a instância da classe
   def __new__(cls):
     if cls._instance is None:
       cls._instance = super(SupabaseConnection, cls).__new__(cls)

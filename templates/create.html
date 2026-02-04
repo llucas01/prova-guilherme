@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Novo Funcionário</title>
-    <!-- ESTILIZAÇÃO-->
     <link rel="stylesheet" href="{{ url_for('static', filename='create.css') }}">
-    <!-- Ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- CONTAINER PRINCIPAL -->
     <div class="container">
-        <!-- TÍTULO DA PÁGINA -->
         <h1 class="titulo">
             <i class="fas fa-user-plus"></i> Cadastrar Novo Funcionário
         </h1>
         
-        <!-- FORMULÁRIO DE CADASTRO -->
         <form method="POST" class="formulario">
             
-            <!-- CAMPO: CPF -->
             <div class="grupo-campo">
                 <label for="cpf">
                     <i class="fas fa-id-card"></i> CPF (11 números):
@@ -35,7 +29,6 @@
                 <small class="texto-ajuda">Apenas números, sem pontos ou traços</small>
             </div>
             
-            <!-- CAMPO: NOME -->
             <div class="grupo-campo">
                 <label for="pnome">
                     <i class="fas fa-user"></i> Nome:
@@ -49,7 +42,6 @@
                        title="Digite o primeiro nome do funcionário">
             </div>
             
-            <!-- CAMPO: SOBRENOME -->
             <div class="grupo-campo">
                 <label for="unome">
                     <i class="fas fa-user-friends"></i> Sobrenome:
@@ -63,7 +55,6 @@
                        title="Digite o sobrenome do funcionário">
             </div>
             
-            <!-- CAMPO: DATA DE NASCIMENTO -->
             <div class="grupo-campo">
                 <label for="data_nasc">
                     <i class="fas fa-birthday-cake"></i> Data de Nascimento:
@@ -75,7 +66,6 @@
                        title="Selecione a data de nascimento">
             </div>
             
-            <!-- CAMPO: SALÁRIO -->
             <div class="grupo-campo">
                 <label for="salario">
                     <i class="fas fa-money-bill-wave"></i> Salário R$:
@@ -91,14 +81,11 @@
                 <small class="texto-ajuda">Use ponto para casas decimais (ex: 2500.50)</small>
             </div>
             
-            <!-- GRUPO DE BOTÕES -->
             <div class="grupo-botoes">
-                <!-- BOTÃO: CADASTRAR -->
                 <button type="submit" class="botao botao-primario">
                     <i class="fas fa-check"></i> Cadastrar
                 </button>
                 
-                <!-- BOTÃO: CANCELAR -->
                 <a href="{{ url_for('index') }}" class="botao botao-secundario">
                     <i class="fas fa-times"></i> Cancelar
                 </a>

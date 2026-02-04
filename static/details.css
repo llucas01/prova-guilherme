@@ -1,4 +1,3 @@
-/* RESET E BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -8,7 +7,6 @@ body {
     line-height: 1.5;
 }
 
-/* CONTAINER PRINCIPAL */
 .app {
     max-width: 900px;
     margin: 40px auto;
@@ -18,7 +16,6 @@ body {
     overflow: hidden;
 }
 
-/* CABEÇALHO */
 .cabecalho {
     background: linear-gradient(to right, #0066cc, #004d99);
     color: white;
@@ -32,7 +29,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* CONTEÚDO PRINCIPAL */
 .conteudo {
     padding: 40px;
 }
@@ -45,7 +41,6 @@ body {
     border-bottom: 2px solid #eaeaea;
 }
 
-/* CARTAO DE DETALHES */
 .cartao {
     background: #fff;
     border: 1px solid #e0e0e0;
@@ -65,12 +60,10 @@ body {
     margin: 0;
 }
 
-/* CORPO DO CARTAO */
 .corpo-cartao {
     padding: 35px 30px;
 }
 
-/* LAYOUT DAS INFORMAÇÕES */
 .info-container {
     display: flex;
     flex-wrap: wrap;
@@ -91,7 +84,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* ESTILO DAS INFORMAÇÕES */
 .info-item {
     margin-bottom: 18px;
     padding-left: 5px;
@@ -104,21 +96,18 @@ body {
     font-weight: 600;
 }
 
-/* SEPARADOR */
 .separador {
     height: 1px;
     background: #eee;
     margin: 30px 0;
 }
 
-/* INFORMAÇÕES ADICIONAIS */
 .info-adicional {
     color: #666;
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
-/* BOTÕES */
 .botoes {
     display: flex;
     justify-content: flex-end;
@@ -146,7 +135,6 @@ body {
     font-size: 1rem;
 }
 
-/* CORES DOS BOTÕES */
 .botao-voltar {
     background: #6c757d;
     color: white;
@@ -177,7 +165,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* BADGES E ESTILOS ESPECIAIS */
 .badge {
     background: #2c3e50;
     color: white;

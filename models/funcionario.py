@@ -17,23 +17,18 @@ class Funcionario:
     _created_at: Optional[datetime] = None
     _updated_at: Optional[datetime] = None
 
-    # Funcionario -> JSON (dict)
     def to_dict(self) -> dict:
         """Converte o modelo para dicionário removendo os underscores e convertendo datetime para string"""
         data = asdict(self)
-        # Remove os underscores dos atributos privados
         data = {key.lstrip('_'): value for key, value in data.items()}
-        # Converte datetime para string (ISO format)
         if data.get('created_at') and isinstance(data['created_at'], datetime):
             data['created_at'] = data['created_at'].isoformat()
         if data.get('updated_at') and isinstance(data['updated_at'], datetime):
             data['updated_at'] = data['updated_at'].isoformat()
-        # Converte date para string
         if data.get('data_nasc') and isinstance(data['data_nasc'], date) and not isinstance(data['data_nasc'], datetime):
             data['data_nasc'] = data['data_nasc'].isoformat()
         return data
 
-    # JSON (dict) -> Funcionario
     @classmethod
     def from_dict(self, data: dict) -> 'Funcionario':
         return Funcionario(

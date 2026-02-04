@@ -11,9 +11,7 @@
             <h1>{{ app_name }}</h1>
         </header>
         
-        <!-- CONTEÚDO PRINCIPAL -->
         <main>
-            <!-- TABELA -->
             <table>
                 <thead>
                     <tr>
@@ -30,7 +28,6 @@
                         <td>{{ f.pnome }}</td>
                         <td>{{ f.unome }}</td>
                         <td>
-                            <!-- LINKS DE AÇÃO -->
                             <a href="{{ url_for('details', pk='cpf', id=f.cpf) }}" title="Ver detalhes">
                                 👁️
                             </a>
@@ -46,7 +43,6 @@
                 </tbody>
             </table>
             
-            <!-- BOTÃO NOVO -->
             <div class="novo-botao">
                 <a href="{{ url_for('create') }}">
                     ➕ Novo Funcionário

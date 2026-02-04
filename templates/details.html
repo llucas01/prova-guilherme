@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Detalhes do Funcionário</title>
-    <!-- ESTILIZAÇÃO -->
     <link rel="stylesheet" href="{{ url_for('static', filename='details.css') }}">
-    <!-- ÍCONES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -13,19 +11,14 @@
         <header class="cabecalho">
             <h1>Detalhes do Funcionário</h1>
         </header>
-        <!-- TODO O CONTEUDO DO SITE -->
         <main class="conteudo">
             <h2 class="titulo-pagina">Informações do Funcionário</h2>
-            <!-- O CARTÃO -->
             <div class="cartao">
-               <!-- CABEÇALHO -->
-                <div class="cabecalho-cartao">
+               <div class="cabecalho-cartao">
                     <h2><i class="fas fa-user"></i> {{ funcionario.pnome }} {{ funcionario.unome }}</h2>
                 </div>
-                <!-- CORPO DO CARTÃO COM AS INFORMAÇÕES -->
                 <div class="corpo-cartao">
                     <div class="info-container">
-                        <!-- COLUNA 1: INFORMAÇÕES PESSOAIS -->
                         <div class="info-coluna">
                             <h5>Informações Pessoais</h5>
                             
@@ -56,7 +49,6 @@
                             </div>
                         </div>
                         
-                        <!-- COLUNA 2: INFORMAÇÕES PROFISSIONAIS -->
                         <div class="info-coluna">
                             <h5>Informações Profissionais</h5>
                             

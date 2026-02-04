@@ -3,32 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Confirmar Exclusão</title>
-    <!-- CSS separado -->
     <link rel="stylesheet" href="{{ url_for('static', filename='delete.css') }}">
 </head>
 <body>
-    <!-- Container principal -->
     <div class="container">
         
-        <!-- Cartão com conteúdo -->
         <div class="card">
             
-            <!-- CABEÇALHO -->
             <header class="cabecalho">
                 <h1>⚠️ Confirmar Exclusão</h1>
                 <p class="subtitulo">Ação irreversível</p>
             </header>
             
-            <!-- CORPO DA PÁGINA -->
             <main class="conteudo">
                 
-                <!-- Alerta de atenção -->
                 <div class="alerta alerta-aviso">
                     <h2>Atenção!</h2>
                     <p>Você está prestes a excluir um funcionário permanentemente.</p>
                 </div>
 
-                <!-- Informações do funcionário -->
                 <div class="informacoes">
                     <h3>Funcionário a ser excluído</h3>
                     
@@ -61,15 +54,12 @@
                     </div>
                 </div>
 
-                <!-- Alerta final -->
                 <div class="alerta alerta-perigo">
                     <h2>⚠️ Esta ação não pode ser desfeita!</h2>
                     <p>Todos os dados deste funcionário serão permanentemente removidos.</p>
                 </div>
 
-                <!-- Formulário de confirmação -->
                 <form method="POST" action="{{ url_for('delete', pk=funcionario.cpf) }}" class="formulario">
-                    <!-- Checkbox de confirmação -->
                     <div class="confirmacao">
                         <input type="checkbox" id="confirmCheckbox" required class="checkbox">
                         <label for="confirmCheckbox" class="checkbox-label">
@@ -77,7 +67,6 @@
                         </label>
                     </div>
                     
-                    <!-- Botões de ação -->
                     <div class="botoes">
                         <a href="{{ url_for('index') }}" class="botao botao-cancelar">
                             ❌ Cancelar
@@ -90,13 +79,11 @@
                 </form>
             </main>
             
-            <!-- RODAPÉ -->
             <footer class="rodape">
                 <p><strong>Observação:</strong> Use o botão "Voltar" do navegador para retornar.</p>
             </footer>
         </div>
         
-        <!-- Mensagem de segurança -->
         <div class="mensagem">
             <p>🔒 Operação protegida.</p>
         </div>
