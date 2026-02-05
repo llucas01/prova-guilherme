@@ -6,49 +6,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
-    <div class="app">
-        <header>
-            <h1>{{ app_name }}</h1>
-        </header>
-        
-        <main>
-            <table>
+
+<div class="layout">
+    <div class="topo">
+        <h1 class="titulo-app">{{ app_name }}</h1>
+        <p class="subtitulo">Gerenciamento de Funcionários</p>
+    </div>
+
+    <section class="painel">
+        <div class="tabela-wrapper">
+            <table class="tabela-dados">
                 <thead>
                     <tr>
                         <th>CPF</th>
                         <th>Primeiro Nome</th>
                         <th>Último Nome</th>
-                        <th>Ações</th>
+                        <th class="col-acoes">Ações</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     {% for f in funcionarios %}
                     <tr>
-                        <td>{{ f.cpf|format_cpf }}</td>
+                        <td class="cpf">{{ f.cpf|format_cpf }}</td>
                         <td>{{ f.pnome }}</td>
                         <td>{{ f.unome }}</td>
-                        <td>
-                            <a href="{{ url_for('details', pk='cpf', id=f.cpf) }}" title="Ver detalhes">
-                                👁️
-                            </a>
-                            <a href="{{ url_for('update', pk=f.cpf) }}" title="Editar">
-                                ✏️
-                            </a>
-                            <a href="{{ url_for('delete', pk=f.cpf) }}" title="Apagar">
-                                🗑️
-                            </a>
+                        <td class="acoes">
+                            <a class="acao ver" href="{{ url_for('details', pk='cpf', id=f.cpf) }}">👁</a>
+                            <a class="acao editar" href="{{ url_for('update', pk=f.cpf) }}">✏️</a>
+                            <a class="acao excluir" href="{{ url_for('delete', pk=f.cpf) }}">🗑</a>
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            
-            <div class="novo-botao">
-                <a href="{{ url_for('create') }}">
-                    ➕ Novo Funcionário
-                </a>
-            </div>
-        </main>
-    </div>
+        </div>
+
+        <div class="area-novo">
+            <a class="btn-novo" href="{{ url_for('create') }}">
+                + Adicionar Funcionário
+            </a>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>
