@@ -27,10 +27,9 @@ def details(pk, id):
 @app.route('/funcionario/novo', methods=['GET', 'POST'])
 def create():
     if request.method == "POST":
-        
-        #a mágica acontece aqui dentro
+   
 
-        criar = "" #Coloque a linha de comando aqui
+        criar = "" 
         
         if criar:
             return redirect(url_for('index'))
