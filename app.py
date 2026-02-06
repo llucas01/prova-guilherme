@@ -27,57 +27,13 @@ def details(pk, id):
 @app.route('/funcionario/novo', methods=['GET', 'POST'])
 def create():
     if request.method == "POST":
-        dados = request.form
+   
 
-        from datetime import datetime as dt
-
-        data_nasc = None
-        if dados.get('data_nasc'):
-            try:
-                data_nasc = dt.strptime(dados['data_nasc'], '%Y-%m-%d').date()
-            except:
-                pass
-
-        salario = None
-        try:
-            salario = float(dados.get('salario'))
-        except:
-            pass
-
-        numero_departamento = None
-        try:
-            numero_departamento = int(dados.get('numero_departamento'))
-        except:
-            pass
-
-        cpf = dados.get('cpf')
-        if cpf:
-            cpf = cpf.replace('.', '').replace('-', '')
-
-        cpf_supervisor = dados.get('cpf_supervisor')
-        if cpf_supervisor:
-            cpf_supervisor = cpf_supervisor.replace('.', '').replace('-', '')
-            if len(cpf_supervisor) != 11:
-                cpf_supervisor = None
-
-        funcionario = Funcionario(
-            _cpf=cpf,
-            _pnome=dados.get('pnome'),
-            _unome=dados.get('unome'),
-            _data_nasc=data_nasc,
-            _endereco=dados.get('endereco'),
-            _salario=salario,
-            _sexo=dados.get('sexo'),
-            _cpf_supervisor=cpf_supervisor,
-            _numero_departamento=numero_departamento,
-            _created_at=datetime.now()
-        )
-
-        criar = funcionario_dao.create(funcionario)
-
+        criar = "" 
+        
         if criar:
             return redirect(url_for('index'))
-
+    
     return render_template('create.html', datetime=datetime)
 
 @app.route('/funcionario/edit/<string:pk>', methods=['GET', 'POST'])
