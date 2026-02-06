@@ -153,4 +153,4 @@ def delete(pk):
 
     funcionario = funcionario_dao.read('cpf', pk)
         
-    return render_template('delete.html', funcionario=funcionario, datetime=datet
+    return render_template('delete.html', funcionario=funcionario, datetime=datetime)
